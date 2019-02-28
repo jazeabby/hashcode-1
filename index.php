@@ -6,6 +6,9 @@ $no_of_images = 0;
 //contains all details of all images
 $images = (array)[];
 
+$temp_v_array = (array)[];
+$temp_h_array = (array)[];
+
 //slides will be increased +1, for final result 
 $no_of_slides = 0;
 
@@ -22,6 +25,7 @@ function read_input(){
     for ($i=0; $i < $no_of_images; $i++) {
         $input_line = fgets($fh); 
         $image[$i] = explode(" ", $input_line);
+
         print "Orientation: ".$image[$i][0]."\n";
 
     }
@@ -39,10 +43,10 @@ function calc_interest_factor($slide1, $slide2){
 
 }
 
-function add_to_slide($id1, $id2 == NULL){
-    
+function add_to_slide($id1, $id2 = NULL){
+    $counter = 0;
     if($id2 == NULL){
-        $result_images[$counter] = "";
+        $slides[$counter++] = $image[$i];
     }
 }
 
