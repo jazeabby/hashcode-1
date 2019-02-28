@@ -24,9 +24,15 @@ function read_input(){
     
     for ($i=0; $i < $no_of_images; $i++) {
         $input_line = fgets($fh); 
-        $image[$i] = explode(" ", $input_line);
+        $this_image = explode(" ", $input_line);
 
-        print "Orientation: ".$image[$i][0]."\n";
+        if($this_image[0] == "H"){
+            array_push($temp_h_array, $this_image);
+        }else{
+            array_push($temp_v_array, $this_image);
+        }
+        
+        print "Orientation: ".$this_image[0]."\n";
 
     }
     
@@ -50,6 +56,14 @@ function add_to_slide($id1, $id2 = NULL){
     }
 }
 
+
+function make_vertical_slides(){
+    foreach ($temp_v_array as $temp) {
+        
+    }
+}
+
+/*tushar7*/
 Function match_tags( $id1, $id2){
 
 }
